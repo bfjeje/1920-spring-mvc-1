@@ -21,7 +21,7 @@ public class HomeController {
 		pedido.setUrlProducto("https://www.amazon.com.br/Console-Nintendo-Switch-OLED-Branco/dp/B098RKWHHZ/ref=sr_1_7?crid=2VZZ14N9FSTZO&keywords=nintendo+switch&qid=1667086131&qu=eyJxc2MiOiI0LjY5IiwicXNhIjoiNC45MyIsInFzcCI6IjMuNjQifQ%3D%3D&sprefix=%2Caps%2C178&sr=8-7&ufe=app_do%3Aamzn1.fos.25548f35-0de7-44b3-b28e-0f56f3f96147");
 		pedido.setUrlImagen("https://m.media-amazon.com/images/I/61dYrzvBLbL._AC_SX679_.jpg");
 		
-		List<Pedido> pedidos = Arrays.asList(pedido,pedido,pedido,pedido);
+		List<Pedido> pedidos = Arrays.asList(pedido);
 		model.addAttribute("pedidos",pedidos);
 		
 		return "home";
