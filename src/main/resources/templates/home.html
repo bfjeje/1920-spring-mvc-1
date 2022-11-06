@@ -5,6 +5,20 @@
 	</head>
 	<body>
 		<div class="container">
+			<div class="p-5 text-bg-secondary rounded-3">
+				<h1 class="display-5">Mis Pedidos</h1>
+			</div>
+			<nav class="navbar navbar-expand bg-light mb-3">
+				<div class="container-fluid d-flex justify-content-between">
+					<div class="navbar-nav">
+						<a class="nav-link active" href="">Todos</a>
+						<a class="nav-link" href="">Esperando</a>
+						<a class="nav-link" href="">Aprobados</a>
+						<a class="nav-link" href="">Entregados</a>
+					</div>
+					<a href="/pedido/nuevo"><button class="btn btn-outline-secondary">Nuevo</button></a>
+				</div>
+			</nav>
 			<div class="card" th:each="pedido : ${pedidos}">
 				<div class="card-header" th:text="${pedido.nombreDelProducto}">Nombre del producto</div>
 				<div class="card-body">
