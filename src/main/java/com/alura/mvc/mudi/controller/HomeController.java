@@ -8,18 +8,18 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.alura.mvc.mudi.model.Pedido;
-import com.alura.mvc.mudi.repository.PedidosRepository;
+import com.alura.mvc.mudi.repository.PedidoRepository;
 
 @Controller
 public class HomeController {
 	
 	@Autowired
-	PedidosRepository repository;
+	PedidoRepository repository;
 	
 	@GetMapping("/home")
 	public String home(Model model) {
 		
-		List<Pedido> pedidos = repository.recuperaTodosLosPedidos();
+		List<Pedido> pedidos = repository.findAll();
 		model.addAttribute("pedidos",pedidos);
 		return "home";
 	}
