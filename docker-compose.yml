@@ -1,0 +1,40 @@
+version: '3.7'
+
+#para ejecutar los services:
+#docker-compose up -d
+
+#para terminar los services:
+#docker-compose down 
+
+services:
+          
+  #spring.datasource.driver-class-name=org.mariadb.jdbc.Driver
+  db:
+    image: mariadb:10.6
+    container_name: mudi_mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mudi
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root  
+    volumes:
+      - ${PWD}/mariadb:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - backend
+
+  adminer:
+    image: adminer
+    container_name: mudi_adminer
+    restart: always
+    ports:
+      - 8081:8080
+    networks:
+      - backend
+
+networks:     
+  backend:
+    driver: bridge
+    name: mudi_network
