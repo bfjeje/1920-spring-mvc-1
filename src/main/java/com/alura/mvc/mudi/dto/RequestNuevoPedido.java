@@ -6,7 +6,7 @@ import com.alura.mvc.mudi.model.Pedido;
 
 public class RequestNuevoPedido {
 	
-	@NotBlank
+	@NotBlank()
 	private String nombreProducto;
 	
 	@NotBlank

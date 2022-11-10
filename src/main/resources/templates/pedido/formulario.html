@@ -12,18 +12,27 @@
 				<form th:object="${requestNuevoPedido}" class="card-body" action="/pedido/nuevo" method="post">
 					<div class="mb-3">
 						<label class="form-label" for="nombreProducto">Producto</label>
-						<input th:field="*{nombreProducto}" class="form-control" placeholder="nombre del producto">
+						<input th:field="*{nombreProducto}" th:errorclass="is-invalid" class="form-control" placeholder="nombre del producto">
 						<small class="form-text">Informe el nombre del producto.</small>
+						<div class="invalid-feedback" th:errors="*{nombreProducto}">
+							Errores del Producto
+						</div>
 					</div>
 					<div class="mb-3">
 						<label class="form-label" for="urlProducto">Url</label>
-						<input th:field="*{urlProducto}" class="form-control" placeholder="url del producto">
+						<input th:field="*{urlProducto}" th:errorclass="is-invalid" class="form-control" placeholder="url del producto">
 						<small class="form-text">Busque en una página el producto que desee y pegue la url de la página aqui.</small>
+						<div class="invalid-feedback" th:errors="*{urlProducto}">
+							Errores de la URL Producto
+						</div>
 					</div>
 					<div class="mb-3" >
 						<label class="form-label" for="urlImagen">Imagen</label>
-						<input th:field="*{urlImagen}" class="form-control" placeholder="url de la imagen">
+						<input th:field="*{urlImagen}" th:errorclass="is-invalid" class="form-control" placeholder="url de la imagen">
 						<small class="form-text">Copie la url de una buena imagen y péguela aqui para ayudar a conseguir compradores.</small>
+						<div class="invalid-feedback" th:errors="*{urlImagen}">
+							Errores de la URL Imagen
+						</div>
 					</div>
 					<div class="mb-3">
 						<label class="form-label" for="descripcion">Descripción</label>
