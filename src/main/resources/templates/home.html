@@ -7,10 +7,10 @@
 			<nav class="navbar navbar-expand bg-light mb-3">
 				<div class="container-fluid d-flex justify-content-between">
 					<div class="navbar-nav">
-						<a class="nav-link active" href="">Todos</a>
-						<a class="nav-link" href="">Esperando</a>
-						<a class="nav-link" href="">Aprobados</a>
-						<a class="nav-link" href="">Entregados</a>
+						<a th:classappend="${status} == null ? 'active'" class="nav-link" href="/home">Todos</a>
+						<a th:classappend="${status} == 'esperando' ? 'active'" class="nav-link" href="/home/esperando">Esperando</a>
+						<a th:classappend="${status} == 'aprobado' ? 'active'" class="nav-link" href="/home/aprobado">Aprobados</a>
+						<a th:classappend="${status} == 'entregado' ? 'active'" class="nav-link" href="/home/entregado">Entregados</a>
 					</div>
 					<a href="/pedido/formulario"><button class="btn btn-outline-secondary">Nuevo</button></a>
 				</div>
